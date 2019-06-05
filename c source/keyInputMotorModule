@@ -1,1 +1,29 @@
-r
+#include <wiringPi.h>
+#include <softPwm.h>
+#include <stdio.h>
+
+#define FAN_IA 4
+
+
+static void Weak() {
+    softPwmWrite(FAN_IA, 666);
+    printf("Weak\n");
+}
+
+
+static void Medium() {
+    softPwmWrite(FAN_IA, 333);
+    printf("Medium\n");
+}
+
+
+static void Strong() {
+    softPwmWrite(FAN_IA, 0);
+    printf("Strong\n");
+}
+
+
+static void Stop() {
+    softPwmWrite(FAN_IA, 999);
+    printf("Stop\n");
+}
